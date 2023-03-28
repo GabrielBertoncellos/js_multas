@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de Multas</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> km/h
+    <input type="button" value="Verificar" onclick="calcular()">
+    <span class="res"></span>
+
+    <script>
+        function calcular() {
+            var valorVelocidade = document.querySelector("input#txtvel") // pega o valor do HTML em tipo string e traz para o JS
+            var resultado = document.querySelector("span.res") // usa a TAG span para adicionar uma string (mais abaixo no código)
+            var velocidade = Number(valorVelocidade.value) // transforma a string digitada no input em NUMBER
+            resultado.innerHTML = `<p>Sua velocidade atual é de ${velocidade} km/h </p>`
+
+            if (velocidade >= 81) {
+                resultado.innerHTML = " <p> Você foi MULTADO por excesso de velocidade! <p> "
+            } if (velocidade < 40) {
+                resultado.innerHTML = " <p> Você está muito devagar, isso pode causar um acidente! <p> "
+            }  
+        }
+
+        
+    </script>
+</body>
+</html>
